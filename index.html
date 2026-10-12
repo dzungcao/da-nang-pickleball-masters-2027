@@ -152,7 +152,7 @@
     }
 
     .hero {
-      padding: 120px 0;
+      padding: 120px 0 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -272,6 +272,69 @@
     .button-secondary:hover {
       background: rgba(0, 217, 255, 0.1);
       box-shadow: 0 8px 24px rgba(0, 217, 255, 0.15);
+    }
+
+    .featured-court {
+      position: relative;
+      z-index: 2;
+      width: min(1220px, calc(100% - 40px));
+      height: 560px;
+      margin: 50px auto 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      background-image: linear-gradient(135deg, rgba(10,14,39,0.3), rgba(10,14,39,0.72)),
+        url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .featured-court::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,14,39,0.05), rgba(10,14,39,0.65));
+    }
+
+    .featured-court-copy {
+      position: absolute;
+      left: 48px;
+      bottom: 44px;
+      right: 48px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      z-index: 1;
+    }
+
+    .featured-court-copy h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 46px);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .featured-court-copy p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      max-width: 460px;
+      line-height: 1.7;
+    }
+
+    .badge {
+      background: rgba(212,175,55,0.14);
+      border: 1px solid rgba(212,175,55,0.7);
+      color: var(--gold-light);
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     section {
@@ -477,44 +540,50 @@
     .experience-visual {
       position: relative;
       height: 500px;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 217, 255, 0.1));
+      background-image: linear-gradient(135deg, rgba(10,14,39,0.25), rgba(10,14,39,0.6)),
+        url('https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
       border: 1px solid var(--border);
       border-radius: 8px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-end;
+      justify-content: flex-start;
       overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     }
 
-    .court-illustration {
+    .experience-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,14,39,0.08), rgba(10,14,39,0.62));
+    }
+
+    .experience-badge {
       position: relative;
-      width: 80%;
-      height: 80%;
-      border: 3px solid var(--gold);
-      border-radius: 4px;
-      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(212, 175, 55, 0.1));
+      z-index: 1;
+      margin: 30px 30px;
+      background: rgba(10,14,39,0.52);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 14px 18px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
     }
 
-    .court-illustration::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: translateY(-50%);
+    .experience-badge strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
 
-    .court-illustration::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background: var(--gold);
-      transform: translateX(-50%);
+    .experience-badge span {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: white;
     }
 
     .experience-content h3 {
@@ -709,6 +778,7 @@
       .timeline { grid-template-columns: repeat(3, 1fr); }
       h1 { font-size: 56px; }
       h2 { font-size: 40px; }
+      .featured-court { height: 420px; }
     }
 
     @media (max-width: 768px) {
@@ -725,6 +795,10 @@
       .day-date { font-size: 22px; }
       section { padding: 60px 0; }
       .section-header { margin-bottom: 50px; }
+      .featured-court { height: 300px; }
+      .featured-court-copy { left: 20px; right: 20px; bottom: 20px; flex-direction: column; align-items: flex-start; }
+      .featured-court-copy h3 { font-size: 26px; }
+      .badge { white-space: normal; }
     }
   </style>
 </head>
@@ -757,6 +831,16 @@
             <button class="button-primary" onclick="openInterest()">Express Your Interest</button>
             <button class="button-secondary" onclick="shareEvent()">Share Event →</button>
           </div>
+        </div>
+      </div>
+
+      <div class="featured-court" aria-label="Indoor pickleball court photo">
+        <div class="featured-court-copy">
+          <div>
+            <h3>World-class court energy.</h3>
+            <p>Built for competitive finals, elevated social play and unforgettable matches in the heart of Da Nang.</p>
+          </div>
+          <div class="badge">Indoor Championship Court</div>
         </div>
       </div>
     </section>
@@ -819,7 +903,12 @@
     <section id="experience">
       <div class="container">
         <div class="experience-section">
-          <div class="experience-visual"><div class="court-illustration"></div></div>
+          <div class="experience-visual">
+            <div class="experience-badge">
+              <strong>Championship Venue</strong>
+              <span>Made for finals and unforgettable rallies.</span>
+            </div>
+          </div>
           <div class="experience-content">
             <div class="section-tag">Play • Connect • Explore</div>
             <h3>Championship Experience</h3>
