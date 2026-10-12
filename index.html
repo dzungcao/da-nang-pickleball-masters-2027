@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0e27">
+  <meta name="description" content="Da Nang Pickleball Masters 2027. International doubles championship. 48+ and 65+ divisions. March 25–30, 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Da Nang Pickleball Masters 2027">
+  <meta property="og:description" content="Elite pickleball tournament in Da Nang. International competition. Two age divisions.">
+  <title>Da Nang Pickleball Masters 2027 | Championship</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0a0e27;
+      --darker: #050709;
+      --gold: #d4af37;
+      --gold-light: #e8c547;
+      --accent: #00d9ff;
+      --accent-dark: #00a8cc;
+      --text-primary: #ffffff;
+      --text-secondary: #b8c5d6;
+      --text-muted: #7a8899;
+      --border: #1a2847;
+      --bg-card: #0f1429;
+      --bg-hover: #161e3f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, var(--dark) 0%, #0d1338 50%, var(--darker) 100%);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 14, 39, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--dark);
+    }
+
+    .logo-text {
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      display: flex;
+      gap: 45px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: .3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      transition: width .3s ease;
+    }
+
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after { width: 100%; }
+
+    .cta-button, .button-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      border: none;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all .3s ease;
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+    }
+
+    .cta-button:hover, .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.3);
+    }
+
+    .hero {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-tag::before, .hero-tag::after {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    }
+
+    .hero-tag::after { background: linear-gradient(90deg, transparent 0%, var(--accent) 100%); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -3px;
+      margin: 20px 0 30px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 50px 0;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--gold);
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 50px; }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 14px 38px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .button-secondary:hover {
+      background: rgba(0, 217, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 217, 255, 0.15);
+    }
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .section-header { text-align: center; margin-bottom: 80px; position: relative; z-index: 2; }
+
+    .section-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .division-card {
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-hover));
+      border: 1px solid var(--border);
+      padding: 60px 40px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s ease;
+    }
+
+    .division-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .division-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+    }
+
+    .division-age {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 20px 0;
+    }
+
+    .division-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 20px 0 15px;
+      color: var(--text-primary);
+    }
+
+    .division-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .division-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .spec-badge {
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      color: var(--accent);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .timeline-section { position: relative; z-index: 2; }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 50px;
+    }
+
+    .timeline-day {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all .3s ease;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .timeline-day.active {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(0, 217, 255, 0.15));
+      border-color: var(--gold);
+    }
+
+    .timeline-day.active::before {
+      content: '★';
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .timeline-day:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .day-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .day-date {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .day-activity {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .experience-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .experience-visual {
+      position: relative;
+      height: 500px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 217, 255, 0.1));
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .court-illustration {
+      position: relative;
+      width: 80%;
+      height: 80%;
+      border: 3px solid var(--gold);
+      border-radius: 4px;
+      background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(212, 175, 55, 0.1));
+    }
+
+    .court-illustration::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: translateY(-50%);
+    }
+
+    .court-illustration::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--gold);
+      transform: translateX(-50%);
+    }
+
+    .experience-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+    }
+
+    .perks-list { display: flex; flex-direction: column; gap: 30px; }
+    .perk { display: flex; gap: 20px; align-items: flex-start; }
+    .perk-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .perk-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+
+    .perk-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .detail-card {
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-hover));
+      border: 1px solid var(--border);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      transition: all .3s ease;
+    }
+
+    .detail-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+    }
+
+    .detail-icon { font-size: 40px; margin-bottom: 20px; }
+    .detail-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: var(--text-primary); }
+    .detail-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+    .cta-section {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 217, 255, 0.1));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section h2 { margin-bottom: 30px; }
+    .cta-section p { font-size: 16px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    footer {
+      background: var(--darker);
+      border-top: 1px solid var(--border);
+      padding: 50px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      width: min(500px, 100%);
+      border-radius: 8px;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+
+    .modal p { color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .close:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .field { margin: 20px 0; text-align: left; }
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: all .3s ease;
+    }
+
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--dark);
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+      z-index: 60;
+    }
+
+    .toast.show { opacity: 1; }
+
+    @media (max-width: 1024px) {
+      .divisions-grid, .details-grid, .experience-section { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: repeat(3, 1fr); }
+      h1 { font-size: 56px; }
+      h2 { font-size: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      nav { gap: 20px; font-size: 11px; }
+      header { flex-wrap: wrap; }
+      .logo { font-size: 18px; }
+      .hero { padding: 60px 0; }
+      h1 { font-size: 40px; letter-spacing: -1px; }
+      h2 { font-size: 32px; }
+      .hero-meta { gap: 30px; }
+      .timeline { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .timeline-day { padding: 16px; min-height: 150px; }
+      .day-date { font-size: 22px; }
+      section { padding: 60px 0; }
+      .section-header { margin-bottom: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="logo"><div class="logo-mark">✦</div><span class="logo-text">DA NANG MASTERS</span></div>
+    <nav>
+      <a href="#divisions">Divisions</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#experience">Experience</a>
+      <a href="#details">Details</a>
+      <button class="cta-button" onclick="openInterest()">Register Interest</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">⚡ International Championship</div>
+          <h1>DA NANG<br>PICKLEBALL<br>MASTERS</h1>
+          <p class="hero-subtitle">Elite international doubles championship. Two prestigious age divisions. March 25–30, 2027.</p>
+          <div class="hero-meta">
+            <div class="meta-item"><div class="meta-value">25–30</div><div class="meta-label">March 2027</div></div>
+            <div class="meta-item"><div class="meta-value">2</div><div class="meta-label">Divisions</div></div>
+            <div class="meta-item"><div class="meta-value">40</div><div class="meta-label">Max Pairs</div></div>
+            <div class="meta-item"><div class="meta-value">∞</div><div class="meta-label">Friendships</div></div>
+          </div>
+          <div class="hero-actions">
+            <button class="button-primary" onclick="openInterest()">Express Your Interest</button>
+            <button class="button-secondary" onclick="shareEvent()">Share Event →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="divisions">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Find Your Game</div>
+          <h2>Two Elite Divisions</h2>
+          <p class="section-desc">Whether you're chasing victory or celebrating passion for the game, there's a championship for you.</p>
+        </div>
+
+        <div class="divisions-grid">
+          <div class="division-card">
+            <div class="section-tag">Masters Division</div>
+            <div class="division-age">48+</div>
+            <h3 class="division-title">Experience Unleashed</h3>
+            <p class="division-desc">For doubles teams with both players aged 48 and above. Competitive spirit, elite play, and unforgettable moments.</p>
+            <div class="division-specs">
+              <span class="spec-badge">👥 Up to 20 Pairs</span>
+              <span class="spec-badge">🏓 Doubles</span>
+              <span class="spec-badge">🏆 Championship</span>
+            </div>
+          </div>
+
+          <div class="division-card">
+            <div class="section-tag">Legends Division</div>
+            <div class="division-age">65+</div>
+            <h3 class="division-title">Legends Never Fade</h3>
+            <p class="division-desc">For doubles teams with both players aged 65 and above. Celebrate mastery, movement, and the joy of competitive play.</p>
+            <div class="division-specs">
+              <span class="spec-badge">👥 Up to 20 Pairs</span>
+              <span class="spec-badge">🏓 Doubles</span>
+              <span class="spec-badge">🏆 Championship</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="timeline-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Tournament Week</div>
+          <h2>Six Days of Championship</h2>
+          <p class="section-desc">Two intense competition days. Four days to connect, celebrate, and explore Da Nang.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-day"><div class="day-label">Thursday</div><div class="day-date">25 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">✈️ Arrivals & Welcome</div></div>
+          <div class="timeline-day"><div class="day-label">Friday</div><div class="day-date">26 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">🏓 Practice & Dinner</div></div>
+          <div class="timeline-day active"><div class="day-label">Saturday</div><div class="day-date">27 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">🔥 Group Stage</div></div>
+          <div class="timeline-day active"><div class="day-label">Sunday</div><div class="day-date">28 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">🏆 Finals</div></div>
+          <div class="timeline-day"><div class="day-label">Monday</div><div class="day-date">29 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">🌴 Social & Explore</div></div>
+          <div class="timeline-day"><div class="day-label">Tuesday</div><div class="day-date">30 <span style="font-size: 14px;">MAR</span></div><div class="day-activity">👋 Departures</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="experience-section">
+          <div class="experience-visual"><div class="court-illustration"></div></div>
+          <div class="experience-content">
+            <div class="section-tag">Play • Connect • Explore</div>
+            <h3>Championship Experience</h3>
+            <div class="perks-list">
+              <div class="perk"><div class="perk-icon">🏓</div><div class="perk-content"><h4>Elite Competition</h4><p>Challenge yourself against world-class players from Singapore, Vietnam, and beyond.</p></div></div>
+              <div class="perk"><div class="perk-icon">🌊</div><div class="perk-content"><h4>Tropical Paradise</h4><p>Experience the beauty of Da Nang. Pristine beaches, local cuisine, and unforgettable scenery.</p></div></div>
+              <div class="perk"><div class="perk-icon">🤝</div><div class="perk-content"><h4>Lasting Connections</h4><p>Build friendships with competitors who share your passion for excellence and the sport.</p></div></div>
+              <div class="perk"><div class="perk-icon">🥂</div><div class="perk-content"><h4>Celebration Moments</h4><p>Welcome dinner, awards ceremony, and exclusive champion experiences await.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Essential Information</div>
+          <h2>Tournament Details</h2>
+        </div>
+        <div class="details-grid">
+          <div class="detail-card"><div class="detail-icon">📍</div><h3>Location</h3><p>Da Nang, Vietnam. Premier pickleball venue and recommended accommodations will be announced upon confirmation.</p></div>
+          <div class="detail-card"><div class="detail-icon">🎯</div><h3>Format & Rules</h3><p>Doubles championship format. Competition rules, qualification details, and match structure will be confirmed by organizers.</p></div>
+          <div class="detail-card"><div class="detail-icon">👥</div><h3>Organized By</h3><p>James, Gracie, and Dzung are uniting international pickleball communities for this exclusive championship event.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Compete?</h2>
+        <p>Express your interest today. Help us bring this championship to life. Players from all regions welcome.</p>
+        <div class="cta-actions">
+          <button class="button-primary" onclick="openInterest()">Express Your Interest</button>
+          <button class="button-secondary" onclick="shareEvent()">Invite a Friend →</button>
+        </div>
+        <p style="font-size: 11px; margin-top: 30px; color: var(--text-muted);">Early interest stage • No payment required • Confirmation coming soon</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>DA NANG PICKLEBALL MASTERS 2027</strong> | International Championship Proposal</p>
+      <p style="margin-top: 12px;">Organizers: James • Gracie • Dzung | Powered by <a href="https://pika002.com/" target="_blank" rel="noopener">Pika002</a></p>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="interestModal" onclick="if(event.target===this)closeInterest()">
+    <div class="modal">
+      <button class="close" onclick="closeInterest()" aria-label="Close">×</button>
+      <div class="section-tag" style="margin-bottom: 10px;">Join Us</div>
+      <h3>Express Your Interest</h3>
+      <p>Fill in your details. We'll create a message to share with the organizers. Your information is never stored.</p>
+      <div class="field"><label for="name">Your Name</label><input id="name" placeholder="e.g. Alex Tan" autocomplete="name"></div>
+      <div class="field"><label for="division">Preferred Division</label><select id="division"><option>48+ Masters</option><option>65+ Legends</option><option>Not sure yet</option></select></div>
+      <div class="field"><label for="partner">Partner Status</label><select id="partner"><option>I have a partner</option><option>Looking for a partner</option><option>Just exploring</option></select></div>
+      <div class="field"><label for="location">Coming From</label><input id="location" placeholder="e.g. Singapore"></div>
+      <button class="button-primary" style="width: 100%; margin-top: 20px;" onclick="copyInterest()">Copy Message & Share</button>
+      <p style="font-size: 11px; margin-top: 15px;">Paste into your message to James, Gracie, or Dzung.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    function openInterest() { document.getElementById('interestModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeInterest() { document.getElementById('interestModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeInterest(); });
+
+    function notify(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        notify('✓ Copied! Share it with an organizer.');
+      } catch (e) {
+        prompt('Copy this message:', text);
+      }
+    }
+
+    function copyInterest() {
+      const name = document.getElementById('name').value.trim() || 'A pickleball champion';
+      const division = document.getElementById('division').value;
+      const partner = document.getElementById('partner').value;
+      const location = document.getElementById('location').value.trim() || 'Not specified';
+      const message = `Hi James, Gracie and Dzung! I'm interested in the Da Nang Pickleball Masters 2027 (25–30 March).\n\nName: ${name}\nDivision: ${division}\nPartner Status: ${partner}\nComing from: ${location}\n\nPlease keep me updated as details are confirmed!`;
+      copyText(message);
+      closeInterest();
+    }
+
+    async function shareEvent() {
+      const data = {
+        title: 'Da Nang Pickleball Masters 2027',
+        text: 'Join the elite international championship. March 25–30, 2027. Two prestigious age divisions. 48+ and 65+ doubles.',
+        url: location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(data);
+          return;
+        } catch (e) {
+          if (e.name === 'AbortError') return;
+        }
+      }
+      copyText(`${data.title}\n${data.text}\n${data.url}`);
+    }
+  </script>
+</body>
+</html>
